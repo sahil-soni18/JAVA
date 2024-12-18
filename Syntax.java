@@ -12,10 +12,12 @@ public class Syntax {
 
         int x = 18; // Variable declaration
 
-        if ( x > 15 ) {
-            System.out.println("X is greater then 15!");
+        if ( x > 0 ) {
+            System.out.println("X is Positive!");
+        } else if ( x < 0 ) { 
+            System.out.println("X Is Negative!");
         } else {
-            System.out.println("X is Lesser then 15!");
+            System.out.println("X is Equals 0!");
         }
 
 
