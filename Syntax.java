@@ -1,83 +1,93 @@
-
-import java.util.Scanner;   // Java Class to take User Input
+import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Syntax {
-    public static void main (String[] args) {
-        // Java Print Statement
-        System.out.println("Hello World!");
 
-        // Control Flow In Java
+    public static void main(String[] args) {
+        // User Input
+        Scanner scanner = new Scanner(System.in);
 
-        // If-else statements
+        // Print Statement
+        System.out.println("Hello, World!");
 
-        int x = 18; // Variable declaration
-
-        if ( x > 0 ) {
-            System.out.println("X is Positive!");
-        } else if ( x < 0 ) { 
-            System.out.println("X Is Negative!");
+        // Control Flow: If-else Statements
+        System.out.println("\nControl Flow: If-else Statements");
+        int x = 18;
+        if (x > 0) {
+            System.out.println("X is positive!");
+        } else if (x < 0) {
+            System.out.println("X is negative!");
         } else {
-            System.out.println("X is Equals 0!");
+            System.out.println("X is equal to 0!");
         }
 
-
-        // Switch Statements
-
-        Scanner scanner = new Scanner(System.in);  // Object Creation for Scanner Class.
-
-        System.out.println("Enter the value of number: ");
-        int number = scanner.nextInt(); // nextInt(): Method to take integer input.
-
-        // Switch Statement to print the number only when if it is 2, 18 or 28 otherwise print Invalid.
+        // Control Flow: Switch Statements
+        System.out.println("\nControl Flow: Switch Statements");
+        System.out.print("Enter a number (2, 18, or 28): ");
+        int number = scanner.nextInt();
         switch (number) {
-            case 2 -> System.out.println(2);
-            case 18 -> System.out.println(18);
-            case 28 -> System.out.println(28);
-            default -> System.out.println("Invalid");
+            case 2:
+            case 18:
+            case 28:
+                System.out.println(number);
+                break;
+            default:
+                System.out.println("Invalid number!");
         }
 
-        // For Loop
-
-        for ( int i = 0; i < 10; i++ ) {
+        // Loop: For Loop
+        System.out.println("\nLoop: For Loop");
+        for (int i = 0; i < 10; i++) {
             System.out.println(i);
         }
 
-        // Array
-
-        // Ways Of Declaring an Array In Java.
-
-        // Way 1
-
+        // Arrays
+        System.out.println("\nArrays");
         int[] numbersArray = new int[5];
 
-        System.out.println(numbersArray);    // Prints the default toString() representation of the array object in Java.: [I@72a7c7e0
-
+        // Array Initialization
+        System.out.println("Array Initialization - Way 1:");
         numbersArray[0] = 2;
         numbersArray[1] = 18;
         numbersArray[2] = 28;
         numbersArray[3] = 1;
-        numbersArray[3] = 3;
-        // numbersArray[4] = 31;
-        // numbersArray[5] = 100;    // Out of bounds.
+        numbersArray[4] = 3;
 
-        for ( int i = 0; i < numbersArray.length; i++ ) {
+        // Printing Array Elements
+        System.out.println("Printing Array Elements:");
+        for (int i = 0; i < numbersArray.length; i++) {
             System.out.println(numbersArray[i]);
         }
 
-        // By default, all elements of an int array in Java are initialized to 0.
+        // Array Literal (Shorter Initialization)
+        System.out.println("\nArray Initialization - Way 2 (Array Literal):");
+        int[] numbersArray2 = {5, 2, 3, 18, 28};
+        System.out.println("Array Length: " + numbersArray2.length);
 
-        // Way 2.
-
-        int[] numbersArray2 = { 5, 2, 3, 18, 28 };
-
-        System.out.println(numbersArray2.length);
-
-        for ( int i = 0; i < numbersArray2.length; i++ ) {
-            System.out.println(numbersArray2[i]);
+        // Printing Array Elements (using enhanced for loop)
+        System.out.println("Printing Array Elements (Enhanced for loop):");
+        for (int num : numbersArray2) {
+            System.out.print(num + " ");
         }
 
-        // numbersArray2[5] = 100;   // Testing if this approach can expand the size of array.   Gives Out of bound error.
+        // ArrayList (Dynamic Arrays)
+        System.out.println("\nArrayList (Dynamic Arrays)");
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(18);
+        arrayList.add(28);
+        arrayList.add(2);
+        arrayList.add(3);
 
-        scanner.close();   // Closing the scanner object.
+        // ArrayList Operations
+        System.out.println("ArrayList size: " + arrayList.size());
+        System.out.println("Element at index 1: " + arrayList.get(1));
+
+        // Printing ArrayList Elements
+        System.out.println("Printing ArrayList Elements:");
+        for (int num : arrayList) {
+            System.out.print(num + " ");
+        }
+
+        scanner.close(); // Closing the scanner object
     }
 }
