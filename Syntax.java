@@ -88,6 +88,34 @@ public class Syntax {
             System.out.print(num + " ");
         }
 
+
+        // Strings in Java:
+
+        System.out.println("\nSTRINGS IN JAVA");
+
+        String str = "Hello, world!";    // ImmutableString
+
+        // String Methods
+
+        System.out.println("LENGHT: " + str.length());
+        System.out.println("UPPERCASE: " + str.toUpperCase());
+        System.out.println("LOWERCASE: " + str.toLowerCase());
+        System.out.println("INDEX OF 'l': " + str.indexOf('l'));
+        System.out.println("SUBSTRING: " + str.substring(6, 11));
+        System.out.println("REPLACE 'world' WITH 'universe': " + str.replace("world", "universe"));
+        System.out.println("CONCATENATE: " + str.concat(" This is a test."));
+        System.out.println("CONTAINS 'world': " + str.contains("world"));
+        System.out.println("STARTS WITH 'Hello': " + str.startsWith("Hello"));
+        System.out.println("ENDS WITH '!': " + str.endsWith("!"));
+        System.out.println("TRIM: " + str.trim()); // Removes leading and trailing whitespace
+        System.out.println("SPLIT BY ',': " + String.join(", ", str.split(", ")));
+        System.out.println("FORMAT: " + String.format("Hello, %s!", "World")); // Formatting strings
+        System.out.println("CHAR AT INDEX 6: " + str.charAt(6));
+        System.out.println("CODE POINT AT INDEX 6: " + (int) str.charAt(6)); // Unicode value of the character at index 6
+        System.out.println("COMPARE: " + str.compareTo("Hello, world!")); // Returns a negative number if this string is lexicographically less than the specified string, 0 if they are equal, and a positive number if this string is lexicographically greater than the specified string.
+
+
+
         scanner.close(); // Closing the scanner object
     }
 }
