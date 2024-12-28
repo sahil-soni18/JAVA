@@ -1,0 +1,110 @@
+No, it is **not always necessary** to explicitly call a parent class constructor from a child class. However, certain scenarios determine whether or not you need to explicitly call it. Let's break this down:
+
+---
+
+### **When Parent Class Constructor Is Called Automatically**
+- If the **parent class has a no-argument constructor**, the Java compiler automatically inserts a call to the parent class's constructor using `super()` at the beginning of the child class constructor.
+- Example:
+
+```java
+class Parent {
+    public Parent() {
+        System.out.println("Parent Constructor Called");
+    }
+}
+
+class Child extends Parent {
+    public Child() {
+        System.out.println("Child Constructor Called");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Child c = new Child();
+    }
+}
+```
+
+**Output**:
+```
+Parent Constructor Called
+Child Constructor Called
+```
+
+In this case, `super()` is called automatically by the compiler, even though it is not explicitly written in the `Child` constructor.
+
+---
+
+### **When You Must Explicitly Call the Parent Class Constructor**
+- If the **parent class does not have a no-argument constructor**, the compiler will throw an error unless you explicitly call the parent class constructor using `super(arguments)` with the required arguments.
+- Example:
+
+```java
+class Parent {
+    public Parent(String message) {
+        System.out.println("Parent Constructor: " + message);
+    }
+}
+
+class Child extends Parent {
+    public Child(String message) {
+        super(message); // Must explicitly call the parent constructor
+        System.out.println("Child Constructor Called");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Child c = new Child("Hello Parent!");
+    }
+}
+```
+
+**Output**:
+```
+Parent Constructor: Hello Parent!
+Child Constructor Called
+```
+
+If you do not explicitly call the parent class constructor in the `Child` class:
+```java
+public Child(String message) {
+    // No explicit call to super
+    System.out.println("Child Constructor Called");
+}
+```
+**Error**:
+```
+Constructor Parent in class Parent cannot be applied to given types;
+required: String
+found: no arguments
+reason: actual and formal argument lists differ in length
+```
+
+---
+
+### **Key Points:**
+1. **No-Argument Constructor in Parent**:
+   - If the parent class has a no-argument constructor, it is automatically invoked if no `super()` is explicitly called.
+
+2. **Parameterized Constructor in Parent**:
+   - If the parent class only has parameterized constructors, you **must explicitly call one of them** from the child class using `super()`.
+
+3. **Default Constructor**:
+   - If no constructor is explicitly defined in the parent class, the Java compiler provides a default no-argument constructor, which the child class can use.
+
+4. **Constructor Chaining**:
+   - When a child class constructor is invoked, it must ensure the parent class constructor is called first (either implicitly or explicitly) to initialize the parent part of the object.
+
+---
+
+### **When Explicit Call to `super()` Is Not Required**
+- If the parent class has a no-argument constructor.
+- If there’s no specific initialization logic required in the parent class.
+
+### **When Explicit Call to `super()` Is Required**
+- When the parent class only has parameterized constructors.
+- When you want to pass specific arguments to initialize the parent class. 
+
+---
