@@ -1,7 +1,13 @@
 package OOP;
 
+// Can have both abstract (unimplemented) and concrete (implemented) methods.
+
 abstract class Compiler {
    abstract void compileCode();
+   // concrete method
+    void runCode() {
+         System.out.println("Running code...");
+    }
 }
 
 class Language extends Compiler {
@@ -17,6 +23,7 @@ public class Abstraction {
     public static void main(String[] args) {
         Compiler compile = new Language();
         compile.compileCode();
+        compile.runCode();
     }
 }
 
