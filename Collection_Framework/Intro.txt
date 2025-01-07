@@ -1,0 +1,29 @@
+Collections Framework:
+ This is a critical topic in Java, as it provides efficient ways to store, retrieve, and manipulate data. You'll use collections extensively in real-world applications.
+
+Collections Framework
+What is the Collections Framework?
+
+A unified architecture for storing and manipulating groups of objects.
+Provides interfaces (e.g., List, Set, Map) and classes (e.g., ArrayList, HashSet, HashMap).
+
+Why Use Collections?
+
+Dynamic sizing (unlike arrays).
+Built-in algorithms for sorting, searching, etc.
+Easy to use and widely adopted in Java development.
+
+
+Core Interfaces in the Framework
+
+List: Ordered collection, allows duplicate elements.
+
+    Classes: ArrayList, LinkedList, Vector.
+
+Set: Unordered collection, no duplicate elements.
+
+    Classes: HashSet, LinkedHashSet, TreeSet.
+
+Map: Key-value pairs, keys must be unique.
+
+    Classes: HashMap, LinkedHashMap, TreeMap.
