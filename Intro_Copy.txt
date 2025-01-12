@@ -1,0 +1,14 @@
+File Handling
+Why File Handling?
+File handling allows you to:
+
+1. Store data persistently outside of your program.
+2. Read data from files for processing.
+3. Write data into files for reporting or logging purposes.
+
+Key Classes in java.io Package:
+1. File: Represents file and directory pathnames.
+2. FileReader/FileWriter: For reading/writing text files.
+3. BufferedReader/BufferedWriter: For efficient reading/writing of large files.
+4. PrintWriter: For writing formatted text.
+5. FileInputStream/FileOutputStream: For reading/writing binary files.
